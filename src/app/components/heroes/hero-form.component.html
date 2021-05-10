@@ -1,0 +1,24 @@
+<mat-card *ngIf="hero" [ngStyle]="{'margin':addingHero ? '20px 0px 0px 0px' : '20px 0px' }">
+
+  <div class="guestbook-panel">
+
+      <mat-card class="field-switcher-container">{{hero?.name ? (hero.name == '' ? 'New Hero' : hero.name) : 'New Hero'}}</mat-card>
+
+      <div class="form-field-container">
+          <div class="form-field-text">
+              <mat-form-field class="example-full-width">
+                  <input matInput [(ngModel)]="hero.name" placeholder="name">
+              </mat-form-field>
+          </div>
+      </div>
+
+      <div class="form-button-container">
+        <button mat-button mat-raised-button (click)="back.emit()" color="primary">Back</button>
+        <button mat-button mat-raised-button (click)="save.emit(hero)" color="primary">Save</button>
+      </div>
+
+  </div>
+
+  <div style="clear:both;"></div>
+
+</mat-card>

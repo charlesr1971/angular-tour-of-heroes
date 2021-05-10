@@ -1,0 +1,29 @@
+mat-slider {
+  width: 300px;
+}
+
+.mat-toolbar {
+  position: relative;
+}
+
+.mat-sidenav-container {
+  position: relative;
+  height: 100%;
+  margin-top: 0px !important;
+}
+
+.mat-list-item {
+  width: 200px !important;
+}
+
+.sidenav-lower-content {
+  margin: 20px;
+}
+
+/* smart phones */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+
+
+}

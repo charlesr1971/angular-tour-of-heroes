@@ -1,0 +1,21 @@
+<mat-card style="margin: 20px 0px;">
+
+  <div class="guestbook-panel">
+
+      <mat-card class="field-switcher-container">Top Heroes</mat-card>
+
+      <div class="form-field-container">
+        <mat-list *ngIf="(heroes | async) as heroes">
+          <div mat-subheader>Name</div>
+          <mat-list-item class="dashboard" *ngFor="let hero of heroes" (click)="gotoDetail(hero)">
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <div mat-line>{{hero.name}}</div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+
+  </div>
+
+  <div style="clear:both;"></div>
+
+</mat-card>

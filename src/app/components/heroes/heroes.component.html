@@ -1,0 +1,39 @@
+<mat-card style="margin: 20px 0px;">
+
+  <div class="guestbook-panel">
+
+      <mat-card class="field-switcher-container">All Heroes</mat-card>
+
+      <rx-hero-list
+          [heroes]="heroes | async"
+          [selectedHero]="selectedHero"
+          (selectEvnt)="select($event)"
+          (deleteEvnt)="delete($event)"
+      ></rx-hero-list>
+
+      <mat-card class="field-switcher-container">
+
+        <button mat-button mat-raised-button class="large" (click)="addHero()" color="primary">Add New Hero</button>
+        <div *ngIf="addingHero">
+            <rx-hero-detail (close)="close()" [addingHero]="addingHero"></rx-hero-detail>
+        </div>
+
+        <div *ngIf="selectedHero">
+          <mat-chip-list>
+            <mat-chip class="mat-chip-accent" selected>
+              <button mat-fab color="warn">
+                <mat-icon>favorite</mat-icon>
+              </button>
+              {{selectedHero.name | uppercase}} is favourite my hero
+            </mat-chip>
+          </mat-chip-list>
+          <button mat-button mat-raised-button class="large" (click)="gotoDetail()" color="primary">View Details</button>
+        </div>
+
+      </mat-card>
+
+    </div>
+
+    <div style="clear:both;"></div>
+
+</mat-card>

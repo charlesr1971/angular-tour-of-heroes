@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  maxTitleInputLength: 50,
+  maxContentInputLength: 215,
+  useRestApi: true,
+  restApiURLReWrite: false,
+  apiEndpointUrl: 'http://localhost:8500/react/react-router-es6/assets/cfm/rest/api/v1/index.cfm'
 };
 
 /*
