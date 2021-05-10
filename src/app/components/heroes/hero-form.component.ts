@@ -7,7 +7,6 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 })
 export class HeroFormComponent {
     @Input() addingHero = false;
-    // tslint:disable-next-line: variable-name
     _hero: any;
     @Input() set hero(value) {
       this._hero = Object.assign({}, value);

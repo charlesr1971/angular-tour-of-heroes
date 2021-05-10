@@ -5,7 +5,7 @@
 
     <mat-form-field #themeSwitcherSelect appearance="fill">
         <mat-label>Theme Switcher</mat-label>
-        <mat-select (selectionChange)="changeTheme($event)">
+        <mat-select (selectionChange)="changeTheme($event)" [value]="selected">
             <mat-select-trigger>
                 <button>
                     <mat-icon [ngStyle]="{'color': selectionPrimaryHex}">stop_circle</mat-icon>

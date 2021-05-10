@@ -32,6 +32,7 @@ export class MyThemeSwitcherComponent implements OnInit {
   materialThemes: Array<MaterialTheme> = [];
   selectionPrimaryHex = '';
   selectionText = '';
+  selected = 0;
 
   constructor(
     private store: Store<{ themeSwitch: number }>,
@@ -62,7 +63,10 @@ export class MyThemeSwitcherComponent implements OnInit {
   ngOnInit(): void {
     this.store.select('themeSwitch').subscribe( ( id ) => {
       const materialTheme: MaterialTheme = readTheme( this.materialThemeDataService.materialThemes, id );
+      this.selected = materialTheme.id;
       this.colorNameTitle = materialTheme.colorNameTitle;
+      this.selectionPrimaryHex = materialTheme.primaryHex;
+      this.selectionText = materialTheme.colorNameTitle;
     });
   }
 

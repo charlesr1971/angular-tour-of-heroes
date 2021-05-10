@@ -4,7 +4,7 @@
 
     <mat-form-field #modeSwitcherSelect appearance="fill">
         <mat-label>Mode Switcher</mat-label>
-        <mat-select (selectionChange)="changeMode($event)">
+        <mat-select (selectionChange)="changeMode($event)" [value]="selected">
             <mat-select-trigger>
                 <button>
                     <mat-icon [ngStyle]="{'color': selectionId === 1 ? 'black' : 'white'}">stop_circle</mat-icon>

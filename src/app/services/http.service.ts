@@ -24,7 +24,6 @@ export class HttpService {
   debug = false;
 
   constructor(private http: HttpClient,
-    // tslint:disable-next-line: align
     private httpBackend: HttpBackend) {
 
     this.useRestApi = environment.useRestApi;
@@ -68,12 +67,10 @@ export class HttpService {
         console.log('HttpService.service: createHero: post: url: ', url);
       }
       return this.http.post(url, '', headers).pipe(
-        // tslint:disable-next-line: no-shadowed-variable
         tap( (data) => data ),
         catchError(this.handleError)
       );
     }
-    // tslint:disable-next-line: one-line
     else {
       headers = {
         reportProgress: false,
@@ -91,7 +88,6 @@ export class HttpService {
         console.log('HttpService.service: createHero: put: url: ', url);
       }
       return this.http.post(url, '', headers).pipe(
-        // tslint:disable-next-line: no-shadowed-variable
         tap( (data: any) => data ),
         catchError(this.handleError)
       );
@@ -108,7 +104,6 @@ export class HttpService {
     if (heroid > 0) {
       url = this.restApiUrlEndpoint + '/hero/' + heroid + '/0';
     }
-    // tslint:disable-next-line: one-line
     else {
       url = this.restApiUrlEndpoint + '/heros/' +  page + '/' +  sortby + '/' +  sortmethod + '/' +  herobatch;
     }
@@ -145,7 +140,6 @@ export class HttpService {
         console.log('HttpService.service: deleteHero: put: url: ', url);
       }
       return this.http.post(url, '', headers).pipe(
-        // tslint:disable-next-line: no-shadowed-variable
         tap( (data: any) => data ),
         catchError(this.handleError)
       );

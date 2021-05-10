@@ -22,6 +22,7 @@ export class MyModeSwitcherComponent implements OnInit {
   materialModes: Array<MaterialMode> = [];
   selectionId  = 1;
   selectionTitle = 'dark';
+  selected = 0;
 
   constructor(private store: Store<{ modeSwitch: number }>) {
     this.modeSwitch$ = store.select('modeSwitch');
@@ -45,7 +46,6 @@ export class MyModeSwitcherComponent implements OnInit {
     if (id === 1) {
       this.selectionTitle = 'dark';
     }
-    // tslint:disable-next-line: one-line
     else {
       this.selectionTitle = 'light';
     }
@@ -55,10 +55,15 @@ export class MyModeSwitcherComponent implements OnInit {
     this.store.select('modeSwitch').subscribe( ( id ) => {
       if (id === 1) {
         this.title = 'dark';
+        this.selected = 1;
+        this.selectionTitle = 'dark';
+        this.selectionId = 1;
       }
-      // tslint:disable-next-line: one-line
       else {
         this.title = 'light';
+        this.selected = 2;
+        this.selectionTitle = 'light';
+        this.selectionId = 2;
       }
     });
   }

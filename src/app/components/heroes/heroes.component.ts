@@ -32,11 +32,6 @@ export class HeroesComponent {
     addHero() {
         this.addingHero = true;
         this.selectedHero = null;
-        this.store.dispatch(HeroActions.resetBlankHero());
-        /* this.hero = of({
-          id: 0,
-          name: ''
-        }); */
     }
 
     close() {

@@ -1,10 +1,10 @@
 {
-  "forin": false,
-  "no-shadowed-variable": true,
-  "one-line": [false, "check-catch", "check-finally", "check-else"],
-  "align": false,
-  "extends": "tslint:recommended",
   "rules": {
+    "forin": false,
+    "no-shadowed-variable": false,
+    "one-line": [false, "check-catch", "check-finally", "check-else"],
+    "extends": "tslint:recommended",
+    "align": [false, "statements"],
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {

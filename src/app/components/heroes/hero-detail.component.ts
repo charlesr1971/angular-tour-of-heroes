@@ -54,9 +54,7 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
           // if (this.debug) {
             console.log('HeroDetailComponent: save: this.addingHero ', this.addingHero);
           // }
-          // tslint:disable-next-line: align
           this.store1.dispatch(HeroActions.resetBlankHero());
-          // tslint:disable-next-line: align
           this.hero = of({
             id: 0,
             name: ''
@@ -76,7 +74,6 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
           this.router.navigate(['/detail/', savedHero.id]);
         }
       }
-      // tslint:disable-next-line: one-line
       else {
         window.history.back();
       }

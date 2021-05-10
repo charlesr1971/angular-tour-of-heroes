@@ -5,6 +5,7 @@ button.mat-button.large {
 }
 
 .mat-chip-accent {
+  height: auto;
   margin: 50px 0px 20px 35px !important;
   border-radius: 6px;
   padding: 35px;
