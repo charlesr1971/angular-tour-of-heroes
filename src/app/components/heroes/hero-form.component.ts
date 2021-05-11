@@ -15,17 +15,17 @@ export class HeroFormComponent {
     get hero() {
         return this._hero;
     }
-    hasLoader = false;
+    addLoader = false;
     debug = false;
     @Output() back = new EventEmitter();
     @Output() save = new EventEmitter();
 
     constructor(private store: Store<any>) {
-      this.store.select('loadSpinner').subscribe( ( bool ) => {
+      this.store.select('addSpinner').subscribe( ( bool ) => {
         if (this.debug) {
           console.log('HeroFormComponent.component: constructor: bool: ', bool);
         }
-        this.hasLoader = bool;
+        this.addLoader = bool;
       })
     }
 

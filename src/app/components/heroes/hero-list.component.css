@@ -236,6 +236,12 @@ button {
   opacity: 0;
 }
 
+.mat-list-item .mat-spinner {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+}
+
 
 /* media queries */
 

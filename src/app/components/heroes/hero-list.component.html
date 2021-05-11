@@ -1,11 +1,11 @@
 <div class="form-field-container">
   <mat-list *ngIf="heroes as heros">
     <div mat-subheader>Name</div>
-    <mat-list-item class="hero-list" *ngFor="let hero of heros" (click)="selectEvnt.emit(hero)" [class.selected]="hero === selectedHero">
+    <mat-list-item class="hero-list" *ngFor="let hero of heros; let i = index" (click)="selectEvnt.emit(hero)" [class.selected]="hero === selectedHero">
       <mat-icon mat-list-icon>account_circle</mat-icon>
       <div mat-line>{{hero.name}}</div>
-      <!-- <button class="delete-button" (click)="delete($event, hero)">Delete</button> -->
-      <mat-icon class="delete-button" (click)="delete($event, hero)">delete</mat-icon>
+      <mat-spinner *ngIf="deleteLoader && selected == i" diameter="20"></mat-spinner>
+      <mat-icon class="delete-button" (click)="delete($event, hero, i)">delete</mat-icon>
     </mat-list-item>
   </mat-list>
 </div>

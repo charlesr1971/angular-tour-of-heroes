@@ -70,6 +70,7 @@ export class HeroEffects {
             console.log('HeroEffects: saveHero$: response: hero: ', hero);
           }
           this.store.dispatch(HeroActions.loadHeroes());
+          this.store.dispatch(HeroActions.addSpinner({bool:false}));
           return HeroActions.saveHeroSuccess(hero);
         }),
     );
@@ -89,7 +90,7 @@ export class HeroEffects {
         }
         this.store.dispatch(HeroActions.loadHeroes());
         this.store.dispatch(HeroActions.resetBlankHero());
-        this.store.dispatch(HeroActions.loadSpinner({bool:false}));
+        this.store.dispatch(HeroActions.addSpinner({bool:false}));
         return HeroActions.addHeroSuccess(hero);
       }),
     );
@@ -108,6 +109,7 @@ export class HeroEffects {
           console.log('HeroEffects: deleteHero$: response: hero: ', hero);
         }
         this.store.dispatch(HeroActions.loadHeroes());
+        this.store.dispatch(HeroActions.deleteSpinner({bool:false}));
         return HeroActions.deleteHeroSuccess(hero);
       }),
     );

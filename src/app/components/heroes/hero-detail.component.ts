@@ -51,9 +51,9 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
             }
         });
         if (this.addingHero) {
-          // if (this.debug) {
+          if (this.debug) {
             console.log('HeroDetailComponent: save: this.addingHero ', this.addingHero);
-          // }
+          }
           this.store1.dispatch(HeroActions.resetBlankHero());
           this.hero = of({
             id: 0,
@@ -83,7 +83,7 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
       if (this.debug) {
         console.log('HeroDetailComponent: save: hero ', hero, ' this.navigated: ', this.navigated);
       }
-      this.store1.dispatch(HeroActions.loadSpinner({bool:true}));
+      this.store1.dispatch(HeroActions.addSpinner({bool:true}));
       if (hero.id === 0) {
           this.store.dispatch(HeroActions.addHero(hero));
           this.hero = of({
