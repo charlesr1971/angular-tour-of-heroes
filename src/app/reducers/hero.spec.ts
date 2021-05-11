@@ -2,11 +2,11 @@ import reducer, * as fromHero from './hero';
 import {HeroActions} from '../actions';
 
 describe('Hero Reducer', () => {
-  let actions: HeroActions;
+  let actions: any;
   let state: fromHero.HeroState;
 
   beforeEach(() => {
-    actions = new HeroActions();
+    actions = HeroActions.loadHeroes();
     state = {
       id: 1,
       name: 'Test'

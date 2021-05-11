@@ -40,9 +40,16 @@ can be found in the LICENSE file at http://angular.io/license
 }
 
 .mat-card.field-switcher-container {
+  position: relative;
   margin-bottom: 30px;
   padding: 20px;
   text-transform: capitalize;
+}
+
+.mat-card.field-switcher-container .mat-spinner {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .mat-card .mat-form-field {

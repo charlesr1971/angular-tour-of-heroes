@@ -9,6 +9,7 @@ import {HeroService} from '../services/hero';
 import {Store} from '@ngrx/store';
 
 import { HttpService } from '../services/http.service';
+import { HeroDetailComponent } from '../components/heroes/hero-detail.component';
 
 @Injectable()
 export class HeroEffects {
@@ -88,6 +89,7 @@ export class HeroEffects {
         }
         this.store.dispatch(HeroActions.loadHeroes());
         this.store.dispatch(HeroActions.resetBlankHero());
+        this.store.dispatch(HeroActions.loadSpinner({bool:false}));
         return HeroActions.addHeroSuccess(hero);
       }),
     );

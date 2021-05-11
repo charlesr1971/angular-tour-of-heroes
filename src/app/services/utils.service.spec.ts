@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed, inject } from '@angular/core/testing';
 
 import { UtilsService } from './utils.service';
@@ -5,7 +6,8 @@ import { UtilsService } from './utils.service';
 describe('UtilsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [UtilsService]
+      providers: [UtilsService],
+      schemas: [ NO_ERRORS_SCHEMA ]
     });
   });
 

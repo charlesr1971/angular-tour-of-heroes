@@ -25,7 +25,7 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
     idSub: Subscription;
     hero: Observable<any>;
     navigated = false;
-    debug = true;
+    debug = false;
 
     @Output() closeEvnt = new EventEmitter();
 
@@ -83,6 +83,7 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
       if (this.debug) {
         console.log('HeroDetailComponent: save: hero ', hero, ' this.navigated: ', this.navigated);
       }
+      this.store1.dispatch(HeroActions.loadSpinner({bool:true}));
       if (hero.id === 0) {
           this.store.dispatch(HeroActions.addHero(hero));
           this.hero = of({
@@ -96,4 +97,5 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
         this.goBack(hero);
       }
     }
+
 }

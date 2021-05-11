@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed, inject } from '@angular/core/testing';
 
 import { HttpService } from './http.service';
@@ -5,7 +6,8 @@ import { HttpService } from './http.service';
 describe('HttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HttpService]
+      providers: [HttpService],
+      schemas: [ NO_ERRORS_SCHEMA ]
     });
   });
 

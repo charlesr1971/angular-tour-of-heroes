@@ -19,7 +19,7 @@ export class HeroesComponent {
     prev = [];
     addingHero = false;
     selectedHero;
-    debug = true;
+    debug = false;
     changeLog = [];
 
     constructor(

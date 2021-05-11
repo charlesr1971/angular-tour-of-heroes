@@ -27,6 +27,8 @@ import { MyThemeSwitcherComponent } from './components/my-theme-switcher/my-them
 import { modeSwitcherReducer } from './app-state/reducers/modeSwitcher.reducer';
 import { MyModeSwitcherComponent } from './components/my-mode-switcher/my-mode-switcher.component';
 
+import { loadSpinnerReducer } from './reducers/loadSpinner.reducer';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { MyModeSwitcherComponent } from './components/my-mode-switcher/my-mode-s
     StoreModule.forRoot({
       themeSwitch: themeSwitcherReducer,
       modeSwitch: modeSwitcherReducer,
+      loadSpinner: loadSpinnerReducer,
     }),
     StoreModule.forFeature('selectHeroList', loadHeroesReducer),
     StoreModule.forFeature('selectHeroGet', getHeroReducer),

@@ -15,6 +15,11 @@ export const ADD_HERO_SUCCESS = '[Hero] Add Hero Success';
 export const DELETE_HERO = '[Hero] Delete Hero';
 export const DELETE_HERO_SUCCESS = '[Hero] Delete Hero Success';
 
+export const loadSpinner = createAction(
+  '[HeroForm Component] LoadSpinner',
+  props<{ bool: boolean }>()
+);
+
 export const loadHeroes = createAction(
   LOAD_HEROES
 );

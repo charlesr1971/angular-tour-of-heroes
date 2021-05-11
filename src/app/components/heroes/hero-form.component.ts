@@ -1,4 +1,5 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Store} from '@ngrx/store';
 
 @Component({
     selector: 'rx-hero-form',
@@ -14,7 +15,18 @@ export class HeroFormComponent {
     get hero() {
         return this._hero;
     }
-
+    hasLoader = false;
+    debug = false;
     @Output() back = new EventEmitter();
     @Output() save = new EventEmitter();
+
+    constructor(private store: Store<any>) {
+      this.store.select('loadSpinner').subscribe( ( bool ) => {
+        if (this.debug) {
+          console.log('HeroFormComponent.component: constructor: bool: ', bool);
+        }
+        this.hasLoader = bool;
+      })
+    }
+
 }

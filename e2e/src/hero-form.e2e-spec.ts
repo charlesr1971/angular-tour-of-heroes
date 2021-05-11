@@ -1,16 +1,20 @@
-import { AppPage } from './app.po';
+import { HeroFormPage } from './hero-form.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
+describe('HeroForm Page', () => {
+  let page: HeroFormPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new HeroFormPage();
   });
 
-  it('should display title', () => {
+  it('should save hero', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('NgRx Heroes');
+    page.clickAddNewHero();
+    page.setNewName('Spiderboy');
+    page.clickSave();
+
+    expect(page.getNamesList()).toEqual('Spiderboy');
   });
 
   afterEach(async () => {

@@ -13,7 +13,7 @@
 
       <mat-card class="field-switcher-container">
 
-        <button mat-button mat-raised-button class="large" (click)="addHero()" color="primary">Add New Hero</button>
+        <button id="addNewHero" mat-button mat-raised-button class="large" (click)="addHero()" color="primary">Add New Hero</button>
         <div *ngIf="addingHero">
             <rx-hero-detail (close)="close()" [addingHero]="addingHero"></rx-hero-detail>
         </div>
@@ -24,7 +24,7 @@
               <button mat-fab color="warn">
                 <mat-icon>favorite</mat-icon>
               </button>
-              {{selectedHero.name | uppercase}} is favourite my hero
+              {{selectedHero.name | uppercase}} is my favourite hero
             </mat-chip>
           </mat-chip-list>
           <button mat-button mat-raised-button class="large" (click)="gotoDetail()" color="primary">View Details</button>

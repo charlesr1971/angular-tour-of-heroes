@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MyThemeSwitcherComponent } from '../my-theme-switcher/my-theme-switcher.component';
@@ -8,7 +9,8 @@ describe('MyThemeSwitcherComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyThemeSwitcherComponent ]
+      declarations: [ MyThemeSwitcherComponent ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));
