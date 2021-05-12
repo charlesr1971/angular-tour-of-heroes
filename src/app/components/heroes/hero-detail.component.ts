@@ -21,13 +21,14 @@ import { of } from 'rxjs';
     `
 })
 export class HeroDetailComponent implements OnInit, OnDestroy {
+
     @Input() addingHero = false;
+    @Output() closeEvnt = new EventEmitter();
+
     idSub: Subscription;
     hero: Observable<any>;
     navigated = false;
     debug = false;
-
-    @Output() closeEvnt = new EventEmitter();
 
     constructor(
         private store: Store<{ selectHeroGet: any }>,

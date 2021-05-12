@@ -1,19 +1,17 @@
-import { HeroFormPage } from './hero-form.po';
+import { HeroListPage } from './hero-list.po';
 import { browser, logging, by, element  } from 'protractor';
 
-describe('HeroForm Page', () => {
+describe('HeroList Page', () => {
 
-  let page: HeroFormPage;
+  let page: HeroListPage;
 
   beforeEach(() => {
-    page = new HeroFormPage();
+    page = new HeroListPage();
   });
 
-  it('should save hero', () => {
+  it('should delete hero', () => {
     page.navigateTo();
-    page.clickAddNewHero();
-    page.setNewName('Spiderboy');
-    page.clickSave();
+    page.clickDelete();
     expect(page.getNamesList()).toEqual(element.all(by.css('.hero-list .mat-line')).first().getText());
   });
 

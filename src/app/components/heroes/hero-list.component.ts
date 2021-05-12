@@ -9,10 +9,12 @@ import {HeroActions} from '../../actions';
     styleUrls: ['./hero-list.component.css']
 })
 export class HeroListComponent {
+
     @Input() heroes;
     @Input() selectedHero;
     @Output() selectEvnt = new EventEmitter();
     @Output() deleteEvnt = new EventEmitter();
+
     deleteLoader = false;
     selected = -1;
     debug = false;

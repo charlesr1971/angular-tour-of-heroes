@@ -1,6 +1,7 @@
 import { browser, by, element } from 'protractor';
 
 export class HeroFormPage {
+
     navigateTo(){
         return browser.get('/heroes');
     }

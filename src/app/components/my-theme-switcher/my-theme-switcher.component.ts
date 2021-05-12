@@ -24,15 +24,15 @@ interface MaterialTheme {
 })
 export class MyThemeSwitcherComponent implements OnInit {
 
-  private debug = false;
-
   private themeSwitch$: Observable<number>;
   private themeSwitch = '';
+
   colorNameTitle = '';
   materialThemes: Array<MaterialTheme> = [];
   selectionPrimaryHex = '';
   selectionText = '';
   selected = 0;
+  debug = false;
 
   constructor(
     private store: Store<{ themeSwitch: number }>,

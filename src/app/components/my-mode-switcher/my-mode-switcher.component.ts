@@ -15,14 +15,14 @@ interface MaterialMode {
 })
 export class MyModeSwitcherComponent implements OnInit {
 
-  private debug = false;
-
   private modeSwitch$: Observable<number>;
+
   title = 'dark';
   materialModes: Array<MaterialMode> = [];
   selectionId  = 1;
   selectionTitle = 'dark';
   selected = 0;
+  debug = false;
 
   constructor(private store: Store<{ modeSwitch: number }>) {
     this.modeSwitch$ = store.select('modeSwitch');

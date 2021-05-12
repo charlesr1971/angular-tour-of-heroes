@@ -11,7 +11,6 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class HttpService {
 
-
   apiUrl = '';
   restApiUrl = '';
   useRestApi = false;
@@ -19,8 +18,6 @@ export class HttpService {
   restApiUrlEndpoint = '/index.cfm';
   isSafari1 = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && navigator.userAgent.indexOf('CriOS') === -1 && navigator.userAgent.indexOf('FxiOS') === -1;
   isSafari2 = /webkit/.test(navigator.userAgent.toLowerCase());
-
-
   debug = false;
 
   constructor(private http: HttpClient,

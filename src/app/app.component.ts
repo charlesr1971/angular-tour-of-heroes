@@ -37,6 +37,7 @@ interface Theme {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
+
   private debug = false;
   private id1 = 0;
   private id2 = 0;
@@ -47,6 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
     primaryIndex: '500',
     primaryHex: '#F44336'
   };
+
   public shouldRun: boolean = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
   mobileQueryListener: () => void;
   title = 'angular-tour-of-heroes';
@@ -116,6 +118,5 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.mobileQuery.removeEventListener('change', this.mobileQueryListener);
   }
-
 
 }

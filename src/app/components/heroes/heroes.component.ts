@@ -15,12 +15,13 @@ import {HeroDetailComponent} from './hero-detail.component';
     styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent {
+
     heroes: Observable<any>;
     prev = [];
     addingHero = false;
     selectedHero;
-    debug = false;
     changeLog = [];
+    debug = false;
 
     constructor(
         private store: Store<any>,
@@ -50,4 +51,5 @@ export class HeroesComponent {
     gotoDetail() {
         this.router.navigate(['/detail/', this.selectedHero.id]);
     }
+
 }

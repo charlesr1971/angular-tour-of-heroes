@@ -15,6 +15,7 @@ import {Hero} from '../../models';
     styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit, OnChanges {
+
     public heroes: any;
     debug = false;
 
@@ -40,4 +41,5 @@ export class DashboardComponent implements OnInit, OnChanges {
     gotoDetail(hero: Hero) {
         this.router.navigate(['/detail/', hero.id]);
     }
+
 }
