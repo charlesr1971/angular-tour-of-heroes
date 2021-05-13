@@ -29,9 +29,9 @@ export class DashboardComponent implements OnInit, OnChanges {
 
     ngOnInit(): void {
       this.store.subscribe( (data) => {
-        //if (this.debug) {
+        if (this.debug) {
           console.log('DashboardComponent: ngOnInit: this.heroes.subscribe 1: data.selectHeroList ', data.selectHeroList);
-        //}
+        }
         this.heroesArray = 'selectHeroList' in data ? data.selectHeroList : [];
       });
     }
@@ -41,7 +41,6 @@ export class DashboardComponent implements OnInit, OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-      // this.heroes = this.store.select('selectHeroList');
     }
 
     gotoDetail(hero: Hero) {
