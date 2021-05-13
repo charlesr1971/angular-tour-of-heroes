@@ -17,7 +17,6 @@ import {Hero} from '../../models';
 export class DashboardComponent implements OnInit, OnChanges {
 
     public heroes: any;
-    public heroesArray: any;
     debug = false;
 
     constructor(
@@ -28,17 +27,11 @@ export class DashboardComponent implements OnInit, OnChanges {
     }
 
     ngOnInit(): void {
-      const that = this;
       this.store.subscribe( function (data) {
-        //if (this.debug) {
+        if (this.debug) {
           console.log('DashboardComponent: ngOnInit: this.heroes.subscribe 1: data.selectHeroList ', data.selectHeroList);
-        //}
-        that.heroesArray = 'selectHeroList' in data ? data.selectHeroList : [];
+        }
       });
-    }
-
-    getHeroes() {
-      return this.heroesArray;
     }
 
     ngOnChanges(changes: SimpleChanges) {
