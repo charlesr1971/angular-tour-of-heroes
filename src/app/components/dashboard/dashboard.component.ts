@@ -17,10 +17,11 @@ import {Hero} from '../../models';
 export class DashboardComponent implements OnInit, OnChanges {
 
     public heroes: any;
+    public heroesArray: any;
     debug = false;
 
     constructor(
-        private store: Store<{ selectHeroList: any }>,
+        public store: Store<{ selectHeroList: any }>,
         private router: Router
     ) {
       this.heroes = this.store.select('selectHeroList');
@@ -28,10 +29,15 @@ export class DashboardComponent implements OnInit, OnChanges {
 
     ngOnInit(): void {
       this.store.subscribe( (data) => {
-        if (this.debug) {
-         console.log('DashboardComponent: ngOnInit: this.heroes.subscribe: data ', data);
-        }
+        //if (this.debug) {
+          console.log('DashboardComponent: ngOnInit: this.heroes.subscribe 1: data.selectHeroList ', data.selectHeroList);
+        //}
+        this.heroesArray = 'selectHeroList' in data ? data.selectHeroList : [];
       });
+    }
+
+    getHeroes() {
+      return this.heroesArray;
     }
 
     ngOnChanges(changes: SimpleChanges) {
