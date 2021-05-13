@@ -1,13 +1,11 @@
-import { CUSTOM_ELEMENTS_SCHEMA, DebugElement, Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { APP_BASE_HREF } from '@angular/common';
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-import {Store, StoreModule} from '@ngrx/store';
+import { async, ComponentFixture, TestBed, fakeAsync, tick, inject } from '@angular/core/testing';
+import { Store, StoreModule } from '@ngrx/store';
 import { MaterialModule } from '../../material.module';
-import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from '../../routes';
-import { of } from 'rxjs';
 import reducer from '../../reducers';
 import { EffectsModule } from '@ngrx/effects';
 
@@ -23,9 +21,9 @@ describe('DashboardComponent', () => {
 
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
+  let testHttpService = HttpService;
 
-  beforeEach(async(() => {
-
+  beforeEach( () => {
     TestBed.configureTestingModule({
       imports: [
         StoreModule.forRoot([reducer], {
@@ -59,9 +57,7 @@ describe('DashboardComponent', () => {
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
-  }));
-
-  beforeEach(() => {
+    testHttpService = TestBed.get(HttpService);
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -78,15 +74,18 @@ describe('DashboardComponent', () => {
     expect(matcard.textContent).toEqual('Top Heroes');
   });
 
-  /* it('should create one mat-list-item for each hero', async(() => {
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-    fixture.whenStable().then(()=>{
-      const matlistitemDe: DebugElement = fixture.debugElement;
-      const matlistitemEl: HTMLElement = matlistitemDe.nativeElement;
-      const matlistitem = matlistitemDe.queryAll(By.css('.mat-list-item.dashboard'));
-      expect(component.getHeroes().length).toBe(11);
-    })
-  })); */
+  it('should create one mat-list-item for each hero', (done: DoneFn) => {
+    inject([HttpService], (injectService: HttpService) => {
+      injectService.readHero(1,0).subscribe(
+        (heroes) => {
+          if(heroes){
+            const length = heroes.length;
+            expect(length).toBe(heroes.length);
+            done();
+          }
+        }
+      )
+    })();
+  });
 
 });

@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 
 describe('AppComponent', () => {
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [

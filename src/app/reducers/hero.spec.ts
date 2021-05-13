@@ -2,6 +2,7 @@ import reducer, * as fromHero from './hero';
 import {HeroActions} from '../actions';
 
 describe('Hero Reducer', () => {
+
   let actions: any;
   let state: fromHero.HeroState;
 
@@ -18,4 +19,5 @@ describe('Hero Reducer', () => {
     expect(result.id).toBe(0);
     expect(result.name).toBe('');
   });
+
 });
